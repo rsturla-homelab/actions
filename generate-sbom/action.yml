@@ -16,6 +16,9 @@ outputs:
   sbom-path:
     description: 'The path to the generated SBOM'
     value: ${{ steps.generate-sbom.outputs.OUTPUT_PATH }}
+  sbom-file:
+    description: 'The SBOM file name'
+    value: ${{ steps.generate-sbom.outputs.OUTPUT_FILE }}
 
 runs:
   using: 'composite'
@@ -35,6 +38,7 @@ runs:
         DESTINATION=$(mktemp -d)/sbom.json
         $SYFT_CMD $IMAGE_REF -o spdx-json=$DESTINATION
         echo "OUTPUT_PATH=$DESTINATION" >> $GITHUB_OUTPUT
+        echo "OUTPUT_FILE=sbom.json" >> $GITHUB_OUTPUT
 
     - name: Setup Cosign
       id: setup-cosign
