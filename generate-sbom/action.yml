@@ -67,7 +67,7 @@ runs:
         PREDICATE_FILE="$SBOM_FILE"
 
         if [[ -n "${COMPRESS:-}" ]]; then
-          TYPE="urn:rsturla-homelab:attestation:spdx+json+zstd:v1"
+          TYPE="application/spdx+json+zstd"
           COMPRESSED_SBOM="${SBOM_FILE}.zst"
 
           # Compress the SBOM
