@@ -46,7 +46,7 @@ runs:
 
     - name: Setup Cosign
       id: setup-cosign
-      uses: sigstore/cosign-installer@d7d6bc7722e3daa8354c50bcb52f4837da5e9b6a # v3
+      uses: sigstore/cosign-installer@398d4b0eeef1380460a10c8013a76f728fb906ac # v3
 
     - name: Attach SBOM
       id: attach-sbom
