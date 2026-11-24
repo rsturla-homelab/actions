@@ -16,7 +16,7 @@ runs:
   using: composite
   steps:
     - name: Setup Cosign
-      uses: sigstore/cosign-installer@3454372f43399081ed03b604cb2d021dabca52bb # v3.8.2
+      uses: sigstore/cosign-installer@881c63bd87e38389154debd8331404ce7ca8a3ab # v4.1.4
 
     - name: Sign OCI Image
       shell: bash
